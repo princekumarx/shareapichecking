@@ -26,6 +26,6 @@ btn.addEventListener('click',()=>{
 
 overlay.addEventListener('click',(e)=>{
     modelbox.style.display = 'none';
-console.log(e)
+ 
 })
  
