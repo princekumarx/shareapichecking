@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>share api</title>
+    <style>
+    button{
+        padding: 10px 30px;
+ color:white;  
+   background:  rgb(189, 10, 40);
+   border: none;
+cursor: pointer;
+border-radius: 100px;
+ margin-left: calc(50% - 30px);
+ outline: none;
+    }
+
+    </style>
+</head>
+<body>
+
+<button>Share</button>
+    <script>
+
+let btn = document.querySelector('button');
+
+btn.addEventListener('click',()=>{
+    if(window.navigator.share){
+        window.navigator.share({
+            title:'share working',
+            text:'This is web share api checking',
+            url: window.location.href
+        }).then(()=>{
+            console.log('Thanks for sharing!');
+        }).catch(err => {
+            console.log('Couldn\'t share of',err.message);
+        });
+    }
+
+    else{
+        console.log('not supported')
+    }
+});
+     
+    </script>
+    
+</body>
+</html>
